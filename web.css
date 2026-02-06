@@ -1,0 +1,167 @@
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: hsl(0, 0%, 20%);
+    line-height: 1.6;
+}
+
+
+.container {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+
+header {
+    background: #fff;
+    padding: 20px 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    position: sticky;
+    font-weight: bold;
+    font-size: 24px;
+    color: #635ac7;
+}
+
+nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #555;
+    font-size: 14px;
+}
+
+
+.hero {
+    background-color: #7062c3;
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    max-width: 600px;
+    margin-bottom: 30px;
+}
+
+.button-primary {
+    background: white;
+    color: #7062c3;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Features Section */
+.features {
+    padding: 60px 0;
+}
+
+.feature-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 40px 30px;
+    flex: 1;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.card h3 {
+    color: #4a3aff;
+    margin-bottom: 15px;
+}
+
+/* About Section */
+.about {
+    padding: 40px 0;
+}
+
+.about-box {
+    background: white;
+    padding: 80px 40px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.about-box h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+/* Contact Section */
+.contact {
+    padding: 60px 0;
+}
+
+.contact-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    gap: 15px;
+}
+
+input, textarea {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.btn-submit {
+    background-color: #4a62ff;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 4px;
+    cursor: pointer;
+    align-self: flex-start;
+}
+
+/* Footer */
+footer {
+    background: #222;
+    color: #888;
+    text-align: center;
+    padding: 40px 0;
+    font-size: 12px;
+}
+
+footer a {
+    color: #4a62ff;
+    text-decoration: none;
+}
