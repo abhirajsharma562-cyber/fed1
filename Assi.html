@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Float-Based Web Layout</title>
+    <style>
+       
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4; /* Light background for the whole page */
+        }
+
+        /* Clearfix Utility - Essential for Float Layouts */
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* --- Header Section --- */
+        .header {
+            background-color: #5d8aa8; /* Darker blue */
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* --- Navigation Bar --- */
+        .navbar {
+            background-color: #799dbe; /* Lighter blue for the nav bar */
+            overflow: hidden; /* Contains the floated nav items */
+            padding: 0 10%; /* Center the nav bar content a bit */
+        }
+
+        .navbar a {
+            float: left; /* Make the nav items sit next to each other */
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            background-color: #799dbe; /* Default background */
+            transition: background-color 0.3s;
+        }
+
+        .navbar a:hover {
+            background-color: #5d8aa8; /* Darker on hover */
+        }
+
+        /* --- Main Content Layout --- */
+        .content-container {
+            width: 80%; /* Sets a max width for the content */
+            margin: 20px auto; /* Centers the container and adds vertical margin */
+            padding: 0 10px;
+            background-color: white; /* White background for the main area */
+            border: 1px solid #ccc;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 25%; 
+            float: left; 
+            padding: 20px;
+            background-color: #e5f5e5; /* Light green color */
+            box-sizing: border-box; /* Include padding in width calculation */
+            min-height: 400px; /* Ensure it has height even with less content */
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar li {
+            padding: 8px 0;
+            color: #4a6c4a;
+            border-bottom: 1px solid #cce5cc;
+        }
+
+        /* Main Content Area */
+        .main-content {
+            width: 75%;
+            float: left; /* Float to the left, next to the sidebar */
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* --- Inner Columns --- */
+        .float-column-1, .float-column-2 {
+            width: 48%; /* Slightly less than 50% for margin/padding */
+            float: left; /* Float both columns to sit next to each other */
+            padding: 15px;
+            margin-right: 2%; /* Space between columns */
+            margin-bottom: 15px;
+            box-sizing: border-box;
+            background-color: #f5f0f5; /* Light purple/pink color */
+        }
+
+        .float-column-2 {
+            margin-right: 0; /* Remove margin for the last column */
+        }
+
+        /* --- About Float Section --- */
+        .about-float-section {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fffacd; /* Light yellow color */
+            border: 1px solid #e0e0e0;
+            clear: both; /* Clear floats from the content-container above */
+        }
+
+        /* --- Footer --- */
+        .footer {
+            clear: both; /* **CRUCIAL:** Ensures the footer is below ALL floated elements */
+            background-color: #5d8aa8;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <h1>Float-Based Web Layout</h1>
+    </header>
+
+    <nav class="navbar">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <div class="content-container">
+
+        <aside class="sidebar">
+            <h2>Sidebar</h2>
+            <ul>
+                <li>Menu Item 1</li>
+                <li>Menu Item 2</li>
+                <li>Menu Item 3</li>
+                <li>Menu Item 4</li>
+                <li>Menu Item 5</li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <h2>Main Content Area</h2>
+            <p>This layout is created using CSS float properties. The sidebar is floated left, and the main content is positioned next to it.</p>
+
+            <div class="float-column-1">
+                <h3>Float Column 1</h3>
+                <p>This column is also floated left. Float was commonly used for layouts before Flexbox and CSS Grid.</p>
+            </div>
+
+            <div class="float-column-2">
+                <h3>Float Column 2</h3>
+                <p>This column is also floated left. Using float for layout requires careful clearing of floats.</p>
+            </div>
+            
+            <div class="clearfix"></div> </main>
+
+        <div class="clearfix"></div> </div>
+
+    <section class="about-float-section">
+        <h3>About Float Layouts</h3>
+        <p>CSS float is a property that positions an element to the left or right of its container, allowing text and inline elements to wrap around it.</p>
+        <p>While float is still useful for wrapping text around images, it's no longer the preferred method for creating complex page layouts.</p>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2023 Float Layout Example. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
