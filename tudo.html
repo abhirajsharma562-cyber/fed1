@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TUDO List</title>
+</head>
+<body>
+    <style>
+:head{
+    --primary-purple:#6366f1;
+    --bg-gray: #f9fafb;
+    --border-color: #e5e7eb;
+
+}
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9fafb;
+    display: flex;
+    justify-content: center;
+    padding-top:50px ;
+}
+.container{
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+h1{color: #1f2937; letter-spacing: 1px; margin-bottom: 30px;}
+
+.input{
+    flex-grow: 1;
+    padding: 12px 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+button#add-btn{
+background-color: var(--primary-purple);
+color: white;
+ border: none;
+ padding: 10px 25px;
+ border-radius: 8px;
+ font-weight: bold;
+ cursor: pointer;
+
+}
+
+select {
+ padding:10px ;
+ border: 1px solid var(--border-color);
+ border-radius: 8px;
+
+}
+
+.tudo-list{list-style: none;padding: 0;}
+.tudo-item{
+background: var(--bg-gray);
+border: 1px solid var(--border-color);
+border-radius: 12px;
+padding: 15px;
+margin-bottom: 12px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+
+}
+
+.tudo-content{display: flex; align-items: center;gap: 15px;text-align: left;}
+
+.tudo-text.completed{
+    text-decoration: line-through;
+    color: #9ca3af;
+}
+
+.timestamp{font-size: 11px;color: #6b7280;display: block; margin-top: 4px;}
+
+.actions{ display: flex;gap: 10px;cursor: pointer;}
+
+input[type="checkbox"] {transform: scale(1.5);accent-color: var(--primary-purple);}
+    </style>
+</body>
+</html>

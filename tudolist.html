@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Todo List</title>
+    <style>
+        :root {
+            --primary-purple: #6366f1;
+            --bg-gray: #f9fafb;
+            --border-color: #e5e7eb;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            padding-top: 50px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        h1 { color: #1f2937; letter-spacing: 1px; margin-bottom: 30px; }
+
+        
+        .input-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+
+        input {
+            flex-grow: 1;
+            padding: 12px 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        button#add-btn {
+            background-color: var(--primary-purple);
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        select {
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+        }
+
+        
+        .todo-list { list-style: none; padding: 0; }
+
+        .todo-item {
+            background: var(--bg-gray);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .todo-content { display: flex; align-items: center; gap: 15px; text-align: left; }
+
+        .todo-text.completed {
+            text-decoration: line-through;
+            color: #9ca3af;
+        }
+
+        .timestamp { font-size: 11px; color: #6b7280; display: block; margin-top: 4px; }
+
+        .actions { display: flex; gap: 10px; font-size: 20px; cursor: pointer; }
+
+        input[type="checkbox"] { transform: scale(1.5); accent-color: var(--primary-purple); }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>TODO LIST</h1>
+    
+    <div class="input-group">
+        <input type="text" id="todo-input" placeholder="What needs to be done?">
+        <button id="add-btn">Add Task</button>
+        <select>
+            <option>All</option>
+        </select>
+    </div>
+
+    <ul id="list-container" class="todo-list">
+        <!-- Tasks will appear here -->
+    </ul>
+</div>
+
+<script>
+    const input = document.getElementById('todo-input');
+    const btn = document.getElementById('add-btn');
+    const list = document.getElementById('list-container');
+
+    btn.onclick = () => {
+        if (input.value.trim() === "") return;
+
+        const now = new Date();
+        const timeString = now.toLocaleDateString() + ", " + now.toLocaleTimeString();
+
+        const li = document.createElement('li');
+        li.className = 'todo-item';
+        li.innerHTML = `
+            <div class="todo-content">
+                <input type="checkbox" onclick="toggleTask(this)">
+                <div>
+                    <span class="todo-text">${input.value}</span>
+                    <span class="timestamp">${timeString}</span>
+                </div>
+            </div>
+            <div class="actions">
+                <span>✏️</span>
+                <span onclick="this.closest('li').remove()">🗑️</span>
+            </div>
+        `;
+
+        list.appendChild(li);
+        input.value = "";
+    };
+
+    function toggleTask(checkbox) {
+        const text = checkbox.nextElementSibling.querySelector('.todo-text');
+        text.classList.toggle('completed');
+    }
+</script>
+
+</body>
+</html>

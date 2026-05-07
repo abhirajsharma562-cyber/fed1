@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Opreatations</h1>
+    <h2>Object Destructuring</h2>
+
+    <p id="demo">PRACTICE</p>
+
+    <SCript>
+
+
+//CREATE AN OBJECT
+
+const person ={
+
+    firstName : "Abhiraj",
+    lastName : "Sharma",
+    age:20,
+    favsports: "Cricket"
+
+};
+
+//destructuring asssigment 
+
+let{ firstName, age} = person;
+
+document.getElementById("demo").innerHTML = firstName  +  " is " +  age  +   " years old. ";
+
+    </SCript>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<button id="btn">Click Me</button>
+<button onclick="removeEvent()">Remove Event</button>
+
+<script>
+const btn = document.getElementById("btn");
+
+function handleClick() {
+  alert("Event is active!");
+}
+
+// Add event
+btn.addEventListener("click", handleClick);
+
+// Remove event
+function removeEvent() {
+  btn.removeEventListener("click", handleClick);
+  alert("Event removed!");
+}
+</script>
